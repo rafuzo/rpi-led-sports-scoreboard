@@ -78,8 +78,9 @@ class StandingsScene(Scene):
         tmp_draw = ImageDraw.Draw(tmp_img)
         
         # First, add the background and text to the non-rotated image.
+        # Leagues with long names can define a LEAGUE_LABEL to display a shorter label in the sidebar.
         tmp_draw.rectangle([(0, 0), (31, 7)], fill=self.COLOURS['white'])
-        tmp_draw.text((1, 0), self.LEAGUE, font=self.FONTS['sm'], fill=self.COLOURS['black'])
+        tmp_draw.text((1, 0), getattr(self, 'LEAGUE_LABEL', self.LEAGUE), font=self.FONTS['sm'], fill=self.COLOURS['black'])
 
         # If standing subdivision ('EC', 'ALE', etc.) provided, determine the correct location based on length and add those as well.
         # If nothing provided, will just display the league name.

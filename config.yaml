@@ -2,24 +2,32 @@
 scene_order:
   - nhl_fav_team_next_game
   - pwhl_fav_team_next_game
+  - ncaamh_fav_team_next_game
+  - ncaawh_fav_team_next_game
   - nba_fav_team_next_game
   - wnba_fav_team_next_game
   - mlb_fav_team_next_game
 
   - nhl_games
   - pwhl_games
+  - ncaamh_games
+  - ncaawh_games
   - nba_games
   - wnba_games
   - mlb_games
 
   - nhl_fav_team_next_game
   - pwhl_fav_team_next_game
+  - ncaamh_fav_team_next_game
+  - ncaawh_fav_team_next_game
   - nba_fav_team_next_game
   - wnba_fav_team_next_game
   - mlb_fav_team_next_game
 
   - nhl_standings
   - pwhl_standings
+  - ncaamh_standings
+  - ncaawh_standings
   - nba_standings
   - wnba_standings
   - mlb_standings
@@ -31,6 +39,10 @@ favourite_teams:
     # - BOS # Example.
   pwhl:
     # - TOR # Example.
+  ncaamh:
+    # - BC # Example.
+  ncaawh:
+    # - WIS # Example.
   nba:
     # - TOR # Example.
   wnba:
@@ -45,6 +57,10 @@ alt_logos:
     # SJS: 1998 # Example.
   pwhl:
     # OTT: 'Red' # Example.
+  ncaamh:
+    # BC: 'Retro' # Example.
+  ncaawh:
+    # WIS: 'Retro' # Example.
   nba:
     # UTA: 2004 # Example.
   wnba:
@@ -125,6 +141,77 @@ scene_settings:
       colour_sidebar: True
       display_for:
         - league
+
+  # Hockey - NCAA (men's and women's).
+  ncaamh:
+    games: # ncaamh_games scene.
+      transition: 'modern'
+      splash:
+        display_splash: True
+        splash_display_duration: 2
+      game_display_duration: 3.5
+      games_to_display: 'favourites_and_ranked' # 'all', 'favourites', 'ranked', 'favourites_and_ranked'. NCAA hockey can have 25+ games in a day, so filtering keeps the scene duration reasonable.
+      ranked_cutoff: 20 # Games with a team ranked at or above this are shown when using a 'ranked' filter.
+      score_alerting:
+        score_coloured: true
+        score_fade_animation: true
+      rollover:
+        rollover_start_time_local: '07:00'
+        show_completed_games_until_rollover_end_time: True
+        rollover_end_time_local: '12:00'
+
+    fav_team_next_game: # ncaamh_fav_team_next_game scene.
+      transition: 'modern'
+      display_duration: 3.5
+      display_if_in_progress: True
+
+    standings: # ncaamh_standings scene.
+      transition: 'modern'
+      splash:
+        display_splash: True
+        splash_display_duration: 2
+      scroll:
+        scroll_pause_duration: 1
+        scroll_frame_duration: 0.075
+      highlight_fav_teams: True
+      colour_sidebar: True
+      display_for:
+        - conference
+
+  ncaawh:
+    games: # ncaawh_games scene.
+      transition: 'modern'
+      splash:
+        display_splash: True
+        splash_display_duration: 2
+      game_display_duration: 3.5
+      games_to_display: 'favourites_and_ranked' # 'all', 'favourites', 'ranked', 'favourites_and_ranked'. NCAA hockey can have 25+ games in a day, so filtering keeps the scene duration reasonable.
+      ranked_cutoff: 15 # Games with a team ranked at or above this are shown when using a 'ranked' filter.
+      score_alerting:
+        score_coloured: true
+        score_fade_animation: true
+      rollover:
+        rollover_start_time_local: '07:00'
+        show_completed_games_until_rollover_end_time: True
+        rollover_end_time_local: '12:00'
+
+    fav_team_next_game: # ncaawh_fav_team_next_game scene.
+      transition: 'modern'
+      display_duration: 3.5
+      display_if_in_progress: True
+
+    standings: # ncaawh_standings scene.
+      transition: 'modern'
+      splash:
+        display_splash: True
+        splash_display_duration: 2
+      scroll:
+        scroll_pause_duration: 1
+        scroll_frame_duration: 0.075
+      highlight_fav_teams: True
+      colour_sidebar: True
+      display_for:
+        - conference
 
   # Basketball - NBA, WNBA.
   nba:

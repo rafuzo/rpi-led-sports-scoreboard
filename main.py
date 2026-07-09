@@ -14,6 +14,10 @@ from scenes.game_scenes.games_scene_mlb import MLBGamesScene
 from scenes.fav_team_next_game_scenes.fav_team_next_game_scene_mlb import MLBFavTeamNextGameScene
 from scenes.standings_scenes.standings_scene_mlb import MLBStandingsScene
 
+from scenes.game_scenes.games_scene_ncaa_hockey import NCAAHockeyGamesScene
+from scenes.fav_team_next_game_scenes.fav_team_next_game_scene_ncaa_hockey import NCAAHockeyFavTeamNextGameScene
+from scenes.standings_scenes.standings_scene_ncaa_hockey import NCAAHockeyStandingsScene
+
 from setup.matrix_setup import matrix, determine_matrix_brightness
 from utils import data_utils
 
@@ -39,7 +43,15 @@ def run_scoreboard():
 
         'mlb_games':                MLBGamesScene(),
         'mlb_fav_team_next_game':   MLBFavTeamNextGameScene(),
-        'mlb_standings':            MLBStandingsScene()
+        'mlb_standings':            MLBStandingsScene(),
+
+        'ncaamh_games':                 NCAAHockeyGamesScene('NCAAMH'),
+        'ncaamh_fav_team_next_game':    NCAAHockeyFavTeamNextGameScene('NCAAMH'),
+        'ncaamh_standings':             NCAAHockeyStandingsScene('NCAAMH'),
+
+        'ncaawh_games':                 NCAAHockeyGamesScene('NCAAWH'),
+        'ncaawh_fav_team_next_game':    NCAAHockeyFavTeamNextGameScene('NCAAWH'),
+        'ncaawh_standings':             NCAAHockeyStandingsScene('NCAAWH')
     }
 
     # Infinite loop.
