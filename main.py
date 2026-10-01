@@ -14,6 +14,8 @@ from scenes.game_scenes.games_scene_mlb import MLBGamesScene
 from scenes.fav_team_next_game_scenes.fav_team_next_game_scene_mlb import MLBFavTeamNextGameScene
 from scenes.standings_scenes.standings_scene_mlb import MLBStandingsScene
 
+from scenes.weather_scenes.weather_scene import WeatherScene
+
 from scenes.game_scenes.games_scene_ncaa_hockey import NCAAHockeyGamesScene
 from scenes.fav_team_next_game_scenes.fav_team_next_game_scene_ncaa_hockey import NCAAHockeyFavTeamNextGameScene
 from scenes.standings_scenes.standings_scene_ncaa_hockey import NCAAHockeyStandingsScene
@@ -51,7 +53,9 @@ def run_scoreboard():
 
         'ncaawh_games':                 NCAAHockeyGamesScene('NCAAWH'),
         'ncaawh_fav_team_next_game':    NCAAHockeyFavTeamNextGameScene('NCAAWH'),
-        'ncaawh_standings':             NCAAHockeyStandingsScene('NCAAWH')
+        'ncaawh_standings':             NCAAHockeyStandingsScene('NCAAWH'),
+
+        'weather':                      WeatherScene()
     }
 
     # Infinite loop.

@@ -1,6 +1,9 @@
 from utils import data_utils
-from rgbmatrix import RGBMatrix, RGBMatrixOptions
-# from RGBMatrixEmulator import RGBMatrix, RGBMatrixOptions
+# Use real matrix hardware when available (i.e., on the Pi), otherwise fall back to the emulator for local development.
+try:
+    from rgbmatrix import RGBMatrix, RGBMatrixOptions
+except ImportError:
+    from RGBMatrixEmulator import RGBMatrix, RGBMatrixOptions
 from datetime import datetime as dt
 import math
 

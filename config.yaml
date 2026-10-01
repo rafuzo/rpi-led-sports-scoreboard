@@ -1,36 +1,38 @@
 # The following scenes will be displayed in the order specified. Will loop once complete.
 scene_order:
-  - nhl_fav_team_next_game
-  - pwhl_fav_team_next_game
-  - ncaamh_fav_team_next_game
-  - ncaawh_fav_team_next_game
-  - nba_fav_team_next_game
-  - wnba_fav_team_next_game
+  - weather
+
+#  - nhl_fav_team_next_game
+#  - pwhl_fav_team_next_game
+#  - ncaamh_fav_team_next_game
+#  - ncaawh_fav_team_next_game
+#  - nba_fav_team_next_game
+#  - wnba_fav_team_next_game
   - mlb_fav_team_next_game
 
   - nhl_games
-  - pwhl_games
+#  - pwhl_games
   - ncaamh_games
   - ncaawh_games
-  - nba_games
-  - wnba_games
-  - mlb_games
+#  - nba_games
+#  - wnba_games
+#  - mlb_games
 
-  - nhl_fav_team_next_game
-  - pwhl_fav_team_next_game
-  - ncaamh_fav_team_next_game
-  - ncaawh_fav_team_next_game
-  - nba_fav_team_next_game
-  - wnba_fav_team_next_game
-  - mlb_fav_team_next_game
+#  - nhl_fav_team_next_game
+#  - pwhl_fav_team_next_game
+#  - ncaamh_fav_team_next_game
+ # - ncaawh_fav_team_next_game
+ # - nba_fav_team_next_game
+ # - wnba_fav_team_next_game
+ # - mlb_fav_team_next_game
 
-  - nhl_standings
-  - pwhl_standings
-  - ncaamh_standings
-  - ncaawh_standings
-  - nba_standings
-  - wnba_standings
-  - mlb_standings
+ # - nhl_standings
+ # - pwhl_standings
+ # - ncaamh_standings
+ # - ncaawh_standings
+ # - nba_standings
+ # - wnba_standings
+ # - mlb_standings
 
 
 # Note your favourite teams by league. Any number of teams can be specified.
@@ -317,6 +319,26 @@ scene_settings:
         - wildcard
         # - league
         # - division
+
+  # Weather.
+
+  weather:
+    latitude: 40.71    # PLACEHOLDER - set to your location.
+    longitude: -74.01  # PLACEHOLDER - set to your location.
+    units: 'imperial'
+    transition: 'modern'
+    current: # Current conditions screen.
+      display_duration: 3.5
+    forecast: # 3-day forecast screen.
+      display_forecast: True
+      display_duration: 3.5
+
+
+# Weather settings. Data comes from the free Open-Meteo API (no key needed). Set your location and preferred units.
+weather:
+  latitude: 40.71    # PLACEHOLDER - set to your location.
+  longitude: -74.01  # PLACEHOLDER - set to your location.
+  units: 'imperial'  # 'imperial' or 'metric'.
 
 
 # Brightness settings.
